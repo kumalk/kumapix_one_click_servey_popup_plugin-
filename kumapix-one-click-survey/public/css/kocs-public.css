@@ -1,0 +1,114 @@
+/* Default variables - can be overridden by inline styles */
+:root {
+    --kocs-bg-color: #ffffff;
+    --kocs-text-color: #333333;
+    --kocs-btn-color: #0073aa;
+    --kocs-btn-text-color: #ffffff;
+}
+
+#kocs-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#kocs-popup-overlay:not(.kocs-hidden) {
+    opacity: 1;
+}
+
+#kocs-popup-container {
+    background-color: var(--kocs-bg-color);
+    color: var(--kocs-text-color);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+#kocs-popup-overlay:not(.kocs-hidden) #kocs-popup-container {
+    transform: scale(1);
+}
+
+#kocs-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--kocs-text-color);
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 0;
+}
+#kocs-close-btn:hover {
+    opacity: 1;
+}
+
+#kocs-question {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#kocs-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kocs-answer-btn {
+    background-color: var(--kocs-btn-color);
+    color: var(--kocs-btn-text-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    width: 100%;
+}
+
+.kocs-answer-btn:hover {
+    filter: brightness(110%);
+    transform: translateY(-2px);
+}
+
+#kocs-thank-you h3 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.kocs-hidden {
+    display: none !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    #kocs-popup-container {
+        padding: 20px;
+        width: calc(100% - 20px);
+    }
+    #kocs-question {
+        font-size: 18px;
+    }
+    .kocs-answer-btn {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+}

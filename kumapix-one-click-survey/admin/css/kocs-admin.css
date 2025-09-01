@@ -1,0 +1,28 @@
+.kocs-wrap .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+.kocs-reports {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+.report-summary, .report-data {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+.kocs-timed-delay {
+    display: none;
+}
+.kocs-reports form {
+    margin-bottom: 15px;
+}
+#kocs-export-csv {
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 782px) {
+    .kocs-reports {
+        grid-template-columns: 1fr;
+    }
+}
